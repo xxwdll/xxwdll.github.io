@@ -10,21 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/blog/',
     scheme: 'Gemini',
     version: '7.4.1',
     exturl: false,
@@ -59,21 +59,21 @@
 <meta name="keywords" content="linux,install,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql主从同步">
-<meta property="og:url" content="http://xxwdll.top/2019/09/12/006mysql主从同步/index.html">
+<meta property="og:url" content="http://w_dll.gitee.io/2019/09/12/006mysql主从同步/index.html">
 <meta property="og:site_name" content="wdll&#39;s blog">
 <meta property="og:description" content="主从同步大体的原理是：主服务器(master)进行的操作将会被记录在Binary日志文件中，从服务器(slave)创建一个IO线程把Binary日志文件中的数据写入自身Relay日志文件中。因此主服务器需要开启Binary日志文件，从服务器需要开启Relay日志文件，主服务器中的MySQL每次操作都会记录到Binary日志文件中。用之前的一台docker搭建的mysql服务器作为主服务，另外重新再">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/001.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/002.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/003.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/master.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/slave.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/001.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/002.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/003.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/master.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/slave.PNG">
 <meta property="og:updated_time" content="2019-10-04T02:27:12.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql主从同步">
 <meta name="twitter:description" content="主从同步大体的原理是：主服务器(master)进行的操作将会被记录在Binary日志文件中，从服务器(slave)创建一个IO线程把Binary日志文件中的数据写入自身Relay日志文件中。因此主服务器需要开启Binary日志文件，从服务器需要开启Relay日志文件，主服务器中的MySQL每次操作都会记录到Binary日志文件中。用之前的一台docker搭建的mysql服务器作为主服务，另外重新再">
-<meta name="twitter:image" content="http://xxwdll.top/2019/09/12/006mysql主从同步/001.PNG">
-  <link rel="canonical" href="http://xxwdll.top/2019/09/12/006mysql主从同步/">
+<meta name="twitter:image" content="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/001.PNG">
+  <link rel="canonical" href="http://w_dll.gitee.io/2019/09/12/006mysql主从同步/">
 
 
 <script id="page-configurations">
@@ -132,7 +132,7 @@
   <div class="site-meta">
 
     <div>
-      <a href="/" class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">wdll's blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -161,7 +161,7 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
       
@@ -172,7 +172,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       
@@ -183,7 +183,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
       
@@ -194,7 +194,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
   </ul>
@@ -223,12 +223,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://xxwdll.top/2019/09/12/006mysql主从同步/">
+    <link itemprop="mainEntityOfPage" href="http://w_dll.gitee.io/blog/2019/09/12/006mysql主从同步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wdll">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -272,7 +272,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
 
                 
                 
@@ -311,22 +311,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"><span class="comment">## 设置server_id,注意要唯一</span></span><br><span class="line">server-id=101  </span><br><span class="line"><span class="comment">## 开启二进制日志功能，以备Slave作为其它Slave的Master时使用</span></span><br><span class="line"><span class="built_in">log</span>-bin=mysql-slave-bin   </span><br><span class="line"><span class="comment">## relay_log配置中继日志</span></span><br><span class="line">relay_log=edu-mysql-relay-bin</span><br></pre></td></tr></table></figure>
 
 <h2 id="链接master和slave"><a href="#链接master和slave" class="headerlink" title="链接master和slave"></a>链接master和slave</h2><p>进入mysql(master)，执行show master status;  </p>
-<img src="/2019/09/12/006mysql主从同步/001.PNG">  
+<img src="/blog/2019/09/12/006mysql主从同步/001.PNG">  
 <p>进入mysql(slave)，执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master to master_host=<span class="string">'149.28.28.145'</span>, master_user=<span class="string">'slave'</span>, master_password=<span class="string">'password'</span>, master_port=3306,master_log_file=<span class="string">'mysql-bin.000001'</span>, master_log_pos=769, master_connect_retry=30;</span><br></pre></td></tr></table></figure>
 
 <p>master_log_file：指定 Slave 从哪个日志文件开始复制数据，即上文中提到的 File 字段的值<br>master_log_pos：从哪个 Position 开始读，即上文中提到的 Position 字段的值<br>master_connect_retry：如果连接失败，重试的时间间隔，单位是秒，默认是60秒<br>查询slave状态,正常情况下，SlaveIORunning 和 SlaveSQLRunning 都是No，因为我们还没有开启主从复制过程。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;show slave status;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/006mysql主从同步/002.PNG">
+<img src="/blog/2019/09/12/006mysql主从同步/002.PNG">
 <p>开启slave，再次查询SlaveIORunning 和 SlaveSQLRunning 都是Yes，说明主从复制已经开启。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;start slave;</span><br><span class="line">mysql&gt;show slave status;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/006mysql主从同步/003.PNG">  
+<img src="/blog/2019/09/12/006mysql主从同步/003.PNG">  
 <p>此时主从同步已开启，可以进行测试，在master中创建一个数据库，再检查slave中是否存在该数据库<br>master  </p>
-<img src="/2019/09/12/006mysql主从同步/master.PNG">
+<img src="/blog/2019/09/12/006mysql主从同步/master.PNG">
 <p>slave  </p>
-<img src="/2019/09/12/006mysql主从同步/slave.PNG">
+<img src="/blog/2019/09/12/006mysql主从同步/slave.PNG">
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.cnblogs.com/songwenjie/p/9371422.html" target="_blank" rel="noopener">链接1</a></p>
 
     </div>
@@ -343,11 +343,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/blog/tags/linux/" rel="tag"># linux</a>
             
-              <a href="/tags/install/" rel="tag"># install</a>
+              <a href="/blog/tags/install/" rel="tag"># install</a>
             
-              <a href="/tags/mysql/" rel="tag"># mysql</a>
+              <a href="/blog/tags/mysql/" rel="tag"># mysql</a>
             
           </div>
         
@@ -357,7 +357,7 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/05/005docker简单安装及使用/" rel="next" title="centsos7下docker简单安装及使用">
+                <a href="/blog/2019/09/05/005docker简单安装及使用/" rel="next" title="centsos7下docker简单安装及使用">
                   <i class="fa fa-chevron-left"></i> centsos7下docker简单安装及使用
                 </a>
               
@@ -367,7 +367,7 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/12/007mysql关联查询/" rel="prev" title="mysql关联查询">
+                <a href="/blog/2019/09/12/007mysql关联查询/" rel="prev" title="mysql关联查询">
                   mysql关联查询 <i class="fa fa-chevron-right"></i>
                 </a>
               
@@ -423,7 +423,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
-      src="/images/avatar.jpg"
+      src="/blog/images/avatar.jpg"
       alt="wdll">
   <p class="site-author-name" itemprop="name">wdll</p>
   <div class="site-description" itemprop="description"></div>
@@ -432,7 +432,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
@@ -444,7 +444,7 @@
       <div class="site-state-item site-state-categories">
         
           
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         
         <span class="site-state-item-count">3</span>
@@ -457,7 +457,7 @@
       <div class="site-state-item site-state-tags">
         
           
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         
         <span class="site-state-item-count">11</span>
@@ -524,13 +524,13 @@
   </div>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/blog/js/utils.js?v=7.4.1"></script><script src="/blog/js/motion.js?v=7.4.1"></script>
+<script src="/blog/js/schemes/pisces.js?v=7.4.1"></script>
 
-<script src="/js/next-boot.js?v=7.4.1"></script>
+<script src="/blog/js/next-boot.js?v=7.4.1"></script>
 
 
 

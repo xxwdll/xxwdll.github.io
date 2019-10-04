@@ -10,21 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/blog/',
     scheme: 'Gemini',
     version: '7.4.1',
     exturl: false,
@@ -59,24 +59,24 @@
 <meta name="keywords" content="linux,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql关联查询">
-<meta property="og:url" content="http://xxwdll.top/2019/09/12/007mysql关联查询/index.html">
+<meta property="og:url" content="http://w_dll.gitee.io/2019/09/12/007mysql关联查询/index.html">
 <meta property="og:site_name" content="wdll&#39;s blog">
 <meta property="og:description" content="关联查询：数据查询是Mysql数据库管理最重要的一个功能，连接查询是关系型数据库最主要的查询，包括了内连接(INNER JOIN)，外链接(LEFT JOIN，RIGHT JOIN)等，通过连接可以实现多个表的同时查询。基本定义:　　left join （左连接）：返回包括左表中的所有记录和右表中连接字段相等的记录。　　right join （右连接）：返回包括右表中的所有记录和左表中连接字段相等">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/a.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/b.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/inner.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/inner2.png">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/left.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/left2.png">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/right.PNG">
-<meta property="og:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/right2.png">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/a.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/b.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/inner.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/inner2.png">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/left.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/left2.png">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/right.PNG">
+<meta property="og:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/right2.png">
 <meta property="og:updated_time" content="2019-10-04T02:27:12.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql关联查询">
 <meta name="twitter:description" content="关联查询：数据查询是Mysql数据库管理最重要的一个功能，连接查询是关系型数据库最主要的查询，包括了内连接(INNER JOIN)，外链接(LEFT JOIN，RIGHT JOIN)等，通过连接可以实现多个表的同时查询。基本定义:　　left join （左连接）：返回包括左表中的所有记录和右表中连接字段相等的记录。　　right join （右连接）：返回包括右表中的所有记录和左表中连接字段相等">
-<meta name="twitter:image" content="http://xxwdll.top/2019/09/12/007mysql关联查询/a.PNG">
-  <link rel="canonical" href="http://xxwdll.top/2019/09/12/007mysql关联查询/">
+<meta name="twitter:image" content="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/a.PNG">
+  <link rel="canonical" href="http://w_dll.gitee.io/2019/09/12/007mysql关联查询/">
 
 
 <script id="page-configurations">
@@ -135,7 +135,7 @@
   <div class="site-meta">
 
     <div>
-      <a href="/" class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">wdll's blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -164,7 +164,7 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
       
@@ -175,7 +175,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       
@@ -186,7 +186,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
       
@@ -197,7 +197,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
   </ul>
@@ -226,12 +226,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://xxwdll.top/2019/09/12/007mysql关联查询/">
+    <link itemprop="mainEntityOfPage" href="http://w_dll.gitee.io/blog/2019/09/12/007mysql关联查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wdll">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -275,7 +275,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
 
                 
                 
@@ -301,25 +301,25 @@
 
 <h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`a_table`</span> <span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">'赵'</span>,<span class="string">'销售'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`a_table`</span> <span class="keyword">VALUES</span>(<span class="number">2</span>,<span class="string">'钱'</span>,<span class="string">'技术'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`a_table`</span> <span class="keyword">VALUES</span>(<span class="number">3</span>,<span class="string">'孙'</span>,<span class="string">'人事'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`a_table`</span> <span class="keyword">VALUES</span>(<span class="number">4</span>,<span class="string">'李'</span>,<span class="string">'销售'</span>);</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/007mysql关联查询/a.PNG">
+<img src="/blog/2019/09/12/007mysql关联查询/a.PNG">
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`b_table`</span> <span class="keyword">VALUES</span>(<span class="number">2</span>,<span class="string">'钱'</span>,<span class="string">'技术'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`b_table`</span> <span class="keyword">VALUES</span>(<span class="number">4</span>,<span class="string">'李'</span>,<span class="string">'销售'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`b_table`</span> <span class="keyword">VALUES</span>(<span class="number">6</span>,<span class="string">'周'</span>,<span class="string">'技术'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`b_table`</span> <span class="keyword">VALUES</span>(<span class="number">8</span>,<span class="string">'吴'</span>,<span class="string">'人事'</span>);</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/007mysql关联查询/b.PNG">
+<img src="/blog/2019/09/12/007mysql关联查询/b.PNG">
 <h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a_table a <span class="keyword">inner</span> <span class="keyword">join</span> b_table b <span class="keyword">on</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/007mysql关联查询/inner.PNG">  
+<img src="/blog/2019/09/12/007mysql关联查询/inner.PNG">  
 <p>将表a_table和表b_table中a.id和b.id相同的行筛选出，相当于求交集  </p>
-<img src="/2019/09/12/007mysql关联查询/inner2.png"> 
+<img src="/blog/2019/09/12/007mysql关联查询/inner2.png"> 
 <h2 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a_table a <span class="keyword">left</span> <span class="keyword">join</span> b_table b <span class="keyword">on</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/007mysql关联查询/left.PNG">  
+<img src="/blog/2019/09/12/007mysql关联查询/left.PNG">  
 <p>左表(a_table)的记录将会全部表示出来，而右表(b_table)只会显示符合搜索条件的记录。右表记录不足的地方均为NULL。  </p>
-<img src="/2019/09/12/007mysql关联查询/left2.png">  
+<img src="/blog/2019/09/12/007mysql关联查询/left2.png">  
 <h2 id="右连接"><a href="#右连接" class="headerlink" title="右连接"></a>右连接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a_table a <span class="keyword">right</span> <span class="keyword">join</span> b_table b <span class="keyword">on</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/09/12/007mysql关联查询/right.PNG">  
+<img src="/blog/2019/09/12/007mysql关联查询/right.PNG">  
 <p>和左连接规则相反  </p>
-<img src="/2019/09/12/007mysql关联查询/right2.png"> 
+<img src="/blog/2019/09/12/007mysql关联查询/right2.png"> 
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/weixin_39220472/article/details/81193617" target="_blank" rel="noopener">链接1</a><br><a href="https://blog.csdn.net/plg17/article/details/78758593" target="_blank" rel="noopener">链接2</a></p>
 
     </div>
@@ -336,9 +336,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/blog/tags/linux/" rel="tag"># linux</a>
             
-              <a href="/tags/mysql/" rel="tag"># mysql</a>
+              <a href="/blog/tags/mysql/" rel="tag"># mysql</a>
             
           </div>
         
@@ -348,7 +348,7 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/12/006mysql主从同步/" rel="next" title="mysql主从同步">
+                <a href="/blog/2019/09/12/006mysql主从同步/" rel="next" title="mysql主从同步">
                   <i class="fa fa-chevron-left"></i> mysql主从同步
                 </a>
               
@@ -358,7 +358,7 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/19/008服务迁移/" rel="prev" title="服务迁移">
+                <a href="/blog/2019/09/19/008服务迁移/" rel="prev" title="服务迁移">
                   服务迁移 <i class="fa fa-chevron-right"></i>
                 </a>
               
@@ -414,7 +414,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
-      src="/images/avatar.jpg"
+      src="/blog/images/avatar.jpg"
       alt="wdll">
   <p class="site-author-name" itemprop="name">wdll</p>
   <div class="site-description" itemprop="description"></div>
@@ -423,7 +423,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
@@ -435,7 +435,7 @@
       <div class="site-state-item site-state-categories">
         
           
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         
         <span class="site-state-item-count">3</span>
@@ -448,7 +448,7 @@
       <div class="site-state-item site-state-tags">
         
           
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         
         <span class="site-state-item-count">11</span>
@@ -515,13 +515,13 @@
   </div>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/blog/js/utils.js?v=7.4.1"></script><script src="/blog/js/motion.js?v=7.4.1"></script>
+<script src="/blog/js/schemes/pisces.js?v=7.4.1"></script>
 
-<script src="/js/next-boot.js?v=7.4.1"></script>
+<script src="/blog/js/next-boot.js?v=7.4.1"></script>
 
 
 
