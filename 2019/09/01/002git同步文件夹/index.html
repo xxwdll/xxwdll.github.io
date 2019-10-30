@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。linux 端配置初始化文件夹">
+  <meta name="description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。">
 <meta name="keywords" content="linux,git,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git同步本地文件夹">
 <meta property="og:url" content="https://blog.xxwdll.top/2019/09/01/002git同步文件夹/index.html">
 <meta property="og:site_name" content="wdll&#39;s blog">
-<meta property="og:description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。linux 端配置初始化文件夹">
+<meta property="og:description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-04T02:27:12.168Z">
+<meta property="og:updated_time" content="2019-10-30T08:48:21.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git同步本地文件夹">
-<meta name="twitter:description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。linux 端配置初始化文件夹">
+<meta name="twitter:description" content="hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。">
   <link rel="canonical" href="https://blog.xxwdll.top/2019/09/01/002git同步文件夹/">
 
 
@@ -283,7 +283,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-04 10:27:12" itemprop="dateModified" datetime="2019-10-04T10:27:12+08:00">2019-10-04</time>
+                <time title="Modified: 2019-10-30 16:48:21" itemprop="dateModified" datetime="2019-10-30T16:48:21+08:00">2019-10-30</time>
               </span>
             
           
@@ -312,8 +312,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。</p><h1 id="linux-端配置"><a href="#linux-端配置" class="headerlink" title="linux 端配置"></a>linux 端配置</h1><h2 id="初始化文件夹"><a href="#初始化文件夹" class="headerlink" title="初始化文件夹"></a>初始化文件夹</h2><a id="more"></a>
-<p>先在GitHub上建好仓库，进入要同步的文件夹，进行同步</p>
+        <p>hexo不支持在线编辑功能，因此想到通过git同步windows下文件到github中，linux服务器再通过github同步，这样可以方便的进行本地进行文章的编辑，提交的话双击脚本在网站上就可以查看刚刚编辑好的内容，这样就可以省去了在服务器上操作的过程，全部在本地执行。</p>
+<a id="more"></a>
+<h1 id="linux-端配置"><a href="#linux-端配置" class="headerlink" title="linux 端配置"></a>linux 端配置</h1><h2 id="初始化文件夹"><a href="#初始化文件夹" class="headerlink" title="初始化文件夹"></a>初始化文件夹</h2><p>先在GitHub上建好仓库，进入要同步的文件夹，进行同步</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxwdll"</span></span><br><span class="line">git config --global user.email <span class="string">"gqoyvf@163.com"</span></span><br><span class="line"><span class="built_in">cd</span> /usr/blog/<span class="built_in">source</span>/</span><br><span class="line">git init</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:xxwdll/myblog.git</span><br><span class="line"><span class="built_in">cd</span> myblog/</span><br></pre></td></tr></table></figure>
 
 <h2 id="上传文件夹内容"><a href="#上传文件夹内容" class="headerlink" title="上传文件夹内容"></a>上传文件夹内容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp ../_posts/* ./</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'update'</span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">mv _posts _posts_bak</span><br><span class="line">mv myblog _posts</span><br></pre></td></tr></table></figure>
@@ -331,6 +332,8 @@
 
 <p>推送脚本如下(需要绑定密钥)：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'update'</span></span><br><span class="line">git push -u origin master</span><br><span class="line">ssh root@推送的服务器IP &lt;&lt;EOF</span><br><span class="line"><span class="built_in">cd</span> /usr/blog</span><br><span class="line">sh ./update_blog.sh</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
