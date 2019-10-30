@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>debian开机启动脚本</title>
+      <link href="/2019/10/21/011debian%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/"/>
+      <url>/2019/10/21/011debian%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</url>
+      
+        <content type="html"><![CDATA[<p>服务器的配置服务总是莫名奇妙的消失，在没有解决前用开机脚本进行检测恢复。<br>之前<a href="https://www.jianshu.com/p/cf5a9f1d3a2d" target="_blank" rel="noopener">centos的开机脚本</a>和debian脚本有所不同，故此进行记录。</p><a id="more"></a><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>新建脚本移动至/etc/init.d文件夹下，并赋可执行权限<br>设置开机自启<br>update-rc.d xx.sh defaults<br>删除开机自启<br>update-rc.d -f xx.sh remove<br>脚本如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo &apos;#!/bin/bash</span><br><span class="line">#</span><br><span class="line">### BEGIN INIT INFO</span><br><span class="line"># Provides:          recovery_conf</span><br><span class="line"># Required-Start:    $remote_fs $syslog</span><br><span class="line"># Required-Stop:     $remote_fs $syslog</span><br><span class="line"># Should-Start:      $network $time</span><br><span class="line"># Should-Stop:       $network $time</span><br><span class="line"># Default-Start:     2 3 4 5</span><br><span class="line"># Default-Stop:      0 1 6</span><br><span class="line"># Description:       recovery toll.conf</span><br><span class="line">### END INIT INFO </span><br><span class="line">#         </span><br><span class="line">         </span><br><span class="line">cd /root/itssky/bin </span><br><span class="line">line=`cat toll.conf | wc -l`</span><br><span class="line">if [[ $line -lt 70 ]];then</span><br><span class="line">        cp -f toll.conf~ toll.conf</span><br><span class="line">        this_pid=`pidof Its*`</span><br><span class="line">        if [ ! -z &quot;$this_pid&quot; ];then</span><br><span class="line">                kill -9 $&#123;this_pid&#125; &amp;&amp; startx </span><br><span class="line">        fi </span><br><span class="line">fi           </span><br><span class="line">&apos; &gt;/etc/init.d/recovery_conf.sh</span><br><span class="line">chmod +x /etc/init.d/recovery_conf.sh</span><br><span class="line">update-rc.d recovery_conf.sh defaults</span><br><span class="line">cd /root/itssky/bin/</span><br><span class="line">if [ ! -f &quot;toll.conf~&quot; ];then</span><br><span class="line">        cp toll.conf toll.conf~</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.moerats.com/archives/577/" target="_blank" rel="noopener">链接</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> shell </tag>
+            
+            <tag> debian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>正则匹配</title>
+      <link href="/2019/10/12/010%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D/"/>
+      <url>/2019/10/12/010%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D/</url>
+      
+        <content type="html"><![CDATA[<p>前端与运维都需要使用到正则匹配，因此此篇用于记录一些不太熟悉的规则和根据需求写的一些正则匹配命令，方便日后查阅，不定时更新。</p><a id="more"></a><h2 id="贪婪与懒惰匹配"><a href="#贪婪与懒惰匹配" class="headerlink" title="贪婪与懒惰匹配"></a>贪婪与懒惰匹配</h2><p>测试用例</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@mail home]# cat regex.txt </span><br><span class="line">abbbab</span><br><span class="line">abbabbbc</span><br><span class="line">ab</span><br><span class="line">a1b</span><br><span class="line">abbabcb</span><br></pre></td></tr></table></figure><h3 id="贪婪"><a href="#贪婪" class="headerlink" title="贪婪"></a>贪婪</h3><p>尽可能多的匹配如:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@mail home]# cat regex.txt | grep &quot;a.*b&quot;</span><br><span class="line">abbbab</span><br><span class="line">abbabbbc</span><br><span class="line">ab</span><br><span class="line">a1b</span><br><span class="line">abbabcb</span><br></pre></td></tr></table></figure><h3 id="懒惰"><a href="#懒惰" class="headerlink" title="懒惰"></a>懒惰</h3><p>尽可能少的匹配如:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@mail home]# cat regex.txt | grep -oP &quot;a.*?b&quot;</span><br><span class="line">ab</span><br><span class="line">ab</span><br><span class="line">ab</span><br><span class="line">ab</span><br><span class="line">ab</span><br><span class="line">a1b</span><br><span class="line">ab</span><br><span class="line">ab</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>纯属个人乱写，如有误欢迎指出且莫怪。</p><h3 id="查看本机ip"><a href="#查看本机ip" class="headerlink" title="查看本机ip"></a>查看本机ip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#all</span><br><span class="line">ifconfig | grep &quot;\([0-9]\&#123;1,3\&#125;\.\)\&#123;3\&#125;[0-9]\&#123;1,3\&#125;&quot; | awk &apos;&#123;print $2&#125;&apos; | grep -oP &quot;[0-9.]*&quot; | grep -v &quot;127.0.0.1&quot;</span><br><span class="line">#eth0</span><br><span class="line">ifconfig eth0 | grep &quot;\([0-9]\&#123;1,3\&#125;\.\)\&#123;3\&#125;[0-9]\&#123;1,3\&#125;&quot; | awk &apos;&#123;print $2&#125;&apos; | grep -oP &quot;[0-9.]*&quot; | grep -v &quot;127.0.0.1&quot;</span><br></pre></td></tr></table></figure><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://deerchao.cn/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> tools </tag>
+            
+            <tag> regex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git推送多个仓库</title>
       <link href="/2019/09/20/009git%E6%8E%A8%E9%80%81%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93/"/>
       <url>/2019/09/20/009git%E6%8E%A8%E9%80%81%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93/</url>
@@ -114,7 +172,7 @@
     
     
     <entry>
-      <title>centsos7下docker简单安装及使用</title>
+      <title>centos7下docker简单安装及使用</title>
       <link href="/2019/09/05/005docker%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/09/05/005docker%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
       
