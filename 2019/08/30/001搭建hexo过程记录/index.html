@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="wdll&#39;s blog">
 <meta property="og:description" content="由于简书挂了，之前写的内容不能编辑，也无法记录新的内容，觉得有必要搭建一个属于个人的博客记录平台。初步选择hexo，因为较为简单，且支持markdown，中文支持很好，后期服务器不想续费了也可以切到GitHub上，并且有着丰富的主题。hexo 正常来说，不需要部署到我们的服务器上，我们的服务器上保存的，其实是基于在hexo通过markdown编写的文章，然后hexo帮我们生成静态的html页面，然">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-04T02:27:12.168Z">
+<meta property="og:updated_time" content="2019-10-30T08:51:55.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客hexo搭建">
 <meta name="twitter:description" content="由于简书挂了，之前写的内容不能编辑，也无法记录新的内容，觉得有必要搭建一个属于个人的博客记录平台。初步选择hexo，因为较为简单，且支持markdown，中文支持很好，后期服务器不想续费了也可以切到GitHub上，并且有着丰富的主题。hexo 正常来说，不需要部署到我们的服务器上，我们的服务器上保存的，其实是基于在hexo通过markdown编写的文章，然后hexo帮我们生成静态的html页面，然">
@@ -283,7 +283,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-04 10:27:12" itemprop="dateModified" datetime="2019-10-04T10:27:12+08:00">2019-10-04</time>
+                <time title="Modified: 2019-10-30 16:51:55" itemprop="dateModified" datetime="2019-10-30T16:51:55+08:00">2019-10-30</time>
               </span>
             
           
@@ -312,7 +312,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>由于简书挂了，之前写的内容不能编辑，也无法记录新的内容，觉得有必要搭建一个属于个人的博客记录平台。<br>初步选择hexo，因为较为简单，且支持markdown，中文支持很好，后期服务器不想续费了也可以切到GitHub上，并且有着丰富的主题。<br>hexo 正常来说，不需要部署到我们的服务器上，我们的服务器上保存的，其实是基于在hexo通过markdown编写的文章，然后hexo帮我们生成静态的html页面，然后，将生成的html上传到我们的服务器。简而言之：hexo是个静态页面生成、上传的工具。<br><a href="http://dew667.xyz/2019/05/25/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">参考链接</a></p><a id="more"></a>
+        <p>由于简书挂了，之前写的内容不能编辑，也无法记录新的内容，觉得有必要搭建一个属于个人的博客记录平台。<br>初步选择hexo，因为较为简单，且支持markdown，中文支持很好，后期服务器不想续费了也可以切到GitHub上，并且有着丰富的主题。<br>hexo 正常来说，不需要部署到我们的服务器上，我们的服务器上保存的，其实是基于在hexo通过markdown编写的文章，然后hexo帮我们生成静态的html页面，然后，将生成的html上传到我们的服务器。简而言之：hexo是个静态页面生成、上传的工具。</p>
+<a id="more"></a>
+<p><a href="http://dew667.xyz/2019/05/25/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">参考链接</a></p>
 <h2 id="下载及解压node-js"><a href="#下载及解压node-js" class="headerlink" title="下载及解压node.js"></a>下载及解压node.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/soft &amp;&amp; <span class="built_in">cd</span> /home/soft</span><br><span class="line">wget https://cdn.npm.taobao.org/dist/node/v10.16.3/node-v10.16.3-linux-x64.tar.xz</span><br><span class="line">chmod +x node-v10.16.3-linux-x64.tar.xz</span><br><span class="line">xz -d node-v10.16.3-linux-x64.tar.xz</span><br><span class="line">cp ./node-v10.16.3-linux-x64.tar /opt/</span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">tar -xvf node-v10.16.3-linux-x64.tar</span><br></pre></td></tr></table></figure>
 
 <h2 id="设置node-js"><a href="#设置node-js" class="headerlink" title="设置node.js"></a>设置node.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/node-v10.16.3-linux-x64/bin/npm /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">ln -s /opt/node-v10.16.3-linux-x64/bin/node /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>

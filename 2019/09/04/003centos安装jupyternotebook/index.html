@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。下载首先确保python的安装，参考12mkdir /home/soft/jupyter &amp;amp;&amp;amp; cd /home/soft/jupyterpip instal">
+  <meta name="description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。">
 <meta name="keywords" content="linux,install,jupyter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos下jupyter notebook的安装">
 <meta property="og:url" content="https://blog.xxwdll.top/2019/09/04/003centos安装jupyternotebook/index.html">
 <meta property="og:site_name" content="wdll&#39;s blog">
-<meta property="og:description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。下载首先确保python的安装，参考12mkdir /home/soft/jupyter &amp;amp;&amp;amp; cd /home/soft/jupyterpip instal">
+<meta property="og:description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-04T02:27:12.168Z">
+<meta property="og:updated_time" content="2019-10-30T08:52:28.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos下jupyter notebook的安装">
-<meta name="twitter:description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。下载首先确保python的安装，参考12mkdir /home/soft/jupyter &amp;amp;&amp;amp; cd /home/soft/jupyterpip instal">
+<meta name="twitter:description" content="看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。">
   <link rel="canonical" href="https://blog.xxwdll.top/2019/09/04/003centos安装jupyternotebook/">
 
 
@@ -283,7 +283,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-04 10:27:12" itemprop="dateModified" datetime="2019-10-04T10:27:12+08:00">2019-10-04</time>
+                <time title="Modified: 2019-10-30 16:52:28" itemprop="dateModified" datetime="2019-10-30T16:52:28+08:00">2019-10-30</time>
               </span>
             
           
@@ -312,9 +312,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。</p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先确保python的安装，<a href="https://www.jianshu.com/p/c66265eeab7" target="_blank" rel="noopener">参考</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/soft/jupyter &amp;&amp; <span class="built_in">cd</span> /home/soft/jupyter</span><br><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure><a id="more"></a>
-
-
+        <p>看网上学习python很多人都在用jupyter,目前也在自己服务器上搭建了一个用来写爬虫及练习python，后来发现jupyter自带命令行工具，有时我连接自己服务器不用xshell，直接在网页上通过jupyter也很方便。</p>
+<a id="more"></a>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先确保python的安装，<a href="https://www.jianshu.com/p/c66265eeab7" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/soft/jupyter &amp;&amp; <span class="built_in">cd</span> /home/soft/jupyter</span><br><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
 
 <h2 id="将端口8888-加入防火墙"><a href="#将端口8888-加入防火墙" class="headerlink" title="将端口8888 加入防火墙"></a>将端口8888 加入防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=8888/tcp --permanent</span><br><span class="line">firewall-cmd --add-port=8888/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 
@@ -329,6 +330,8 @@
 
 <h2 id="重启脚本"><a href="#重启脚本" class="headerlink" title="重启脚本"></a>重启脚本</h2><p>通过该脚本进行重启</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">this_pid=`lsof -i:8888|awk <span class="string">'&#123;print $2&#125;'</span>|uniq|grep [0-9]`</span><br><span class="line"><span class="built_in">kill</span> -9 <span class="variable">$&#123;this_pid&#125;</span></span><br><span class="line"><span class="built_in">cd</span> /home/soft/jupyter</span><br><span class="line">rm -f nohup.out jupyter_server.log</span><br><span class="line">nohup jupyter notebook &gt; jupyter_server.log &amp;</span><br><span class="line">sleep 2</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     

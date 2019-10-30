@@ -68,7 +68,7 @@
 <meta property="og:image" content="https://blog.xxwdll.top/2019/09/12/006mysql主从同步/003.PNG">
 <meta property="og:image" content="https://blog.xxwdll.top/2019/09/12/006mysql主从同步/master.PNG">
 <meta property="og:image" content="https://blog.xxwdll.top/2019/09/12/006mysql主从同步/slave.PNG">
-<meta property="og:updated_time" content="2019-10-04T02:27:12.174Z">
+<meta property="og:updated_time" content="2019-10-30T08:53:43.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql主从同步">
 <meta name="twitter:description" content="主从同步大体的原理是：主服务器(master)进行的操作将会被记录在Binary日志文件中，从服务器(slave)创建一个IO线程把Binary日志文件中的数据写入自身Relay日志文件中。因此主服务器需要开启Binary日志文件，从服务器需要开启Relay日志文件，主服务器中的MySQL每次操作都会记录到Binary日志文件中。用之前的一台docker搭建的mysql服务器作为主服务，另外重新再">
@@ -289,7 +289,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-04 10:27:12" itemprop="dateModified" datetime="2019-10-04T10:27:12+08:00">2019-10-04</time>
+                <time title="Modified: 2019-10-30 16:53:43" itemprop="dateModified" datetime="2019-10-30T16:53:43+08:00">2019-10-30</time>
               </span>
             
           
@@ -318,7 +318,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>主从同步大体的原理是：主服务器(master)进行的操作将会被记录在Binary日志文件中，从服务器(slave)创建一个IO线程把Binary日志文件中的数据写入自身Relay日志文件中。因此主服务器需要开启Binary日志文件，从服务器需要开启Relay日志文件，主服务器中的MySQL每次操作都会记录到Binary日志文件中。<br>用之前的一台docker搭建的mysql服务器作为主服务，另外重新再准备一台服务器搭建mysql来做同步。</p><a id="more"></a>
+        <p>主从同步大体的原理是：主服务器(master)进行的操作将会被记录在Binary日志文件中，从服务器(slave)创建一个IO线程把Binary日志文件中的数据写入自身Relay日志文件中。因此主服务器需要开启Binary日志文件，从服务器需要开启Relay日志文件，主服务器中的MySQL每次操作都会记录到Binary日志文件中。<br>用之前的一台docker搭建的mysql服务器作为主服务，另外重新再准备一台服务器搭建mysql来做同步。</p>
+<a id="more"></a>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>现准备一台服务器，安装mysql服务<br>下载安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum repolist enabled | grep <span class="string">"mysql.*-community.*"</span></span><br><span class="line">yum install mysql-community-server</span><br><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
 
